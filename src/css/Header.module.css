@@ -1,0 +1,33 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--header);
+    padding: 15px 2vw;
+    color: white;
+}
+.header h1 {
+    font: bold 2em Georgia, serif;
+    transition: .2s;
+    color: white;
+}
+.header h1:hover {
+    color: var(--text);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.header ul {
+    display: flex;
+}
+
+.header ul li {
+    margin-left: 20px;
+    padding: 5px;
+}
+
+.flag{
+    width: 20px;
+    height: 13px;
+    margin-right: 2px;
+}

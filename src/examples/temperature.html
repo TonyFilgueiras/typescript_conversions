@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>Tony's Conversions - temperature</title>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/weight.css">
+
+        
+    </head>
+    <body>
+        <header>
+            <h1><a href="tony_conversions.html">Tony's Conversions - Temperature</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="temperature.html"><img src="img_html/eua.png" class="flag">En</a></li>
+                    <li><a href="temperature_br.html"><img src="img_html/brasil.png" class="flag">Pt</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <ul>
+                <li>
+                    <p><input type="number" id="v1" value="0"></p>
+                    <div id="valor1"></div>
+                    <select id="medida1">
+                        <option>Fahrenheit (ºF)</option>
+                        <option>Celsius (ºC)</option>
+                        <option>Kelvin (K)</option>
+                        
+                    </select>
+                    <script>
+                        var v1= Number(document.getElementById("v1").value)
+                        var t1 = document.querySelector("div#valor1")
+                        t1.innerHTML = (v1 + " Fº")
+                        var symbol = document.getElementById("medida1").value
+                        if (symbol == "Celsius (ºC)"){
+                            symbol = " Cº"
+                        }
+                        if (symbol == "Fahrenheit (ºF)"){
+                            symbol = " Fº"
+                        }
+                        if (symbol == "Kelvin (K)"){
+                            symbol = " K"
+                        }
+                        t1.innerHTML = (v1 + symbol)
+                    </script>
+                </li>
+                <li id="igual">=</li>
+                <li>
+                    <p><input type="number" id="v2"></p>
+                    <div id="valor2"></div>
+                    <select id="medida2">
+                        <option>Celsius (ºC)</option>
+                        <option>Fahrenheit (ºF)</option>
+                        <option>Kelvin (K)</option>    
+                    </select>
+                    <script>
+                        var v2= Number(document.getElementById("v2").value)
+                        var t2 = document.querySelector("div#valor2")
+                        var symbol = document.getElementById("medida2").value
+                        if (symbol == "Celsius (ºC)"){
+                            symbol = " Cº"
+                        }
+                        if (symbol == "Fahrenheit (ºF)"){
+                            symbol = " Fº"
+                        }
+                        if (symbol == "Kelvin (K)"){
+                            symbol = " K"
+                        }
+                        t2.innerHTML = (v1+20 + symbol)
+                    </script>
+                </li>
+            </ul>
+    </main>
+    </body>
+
+</html>

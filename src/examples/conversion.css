@@ -1,0 +1,97 @@
+body{
+    background-color: #ffaeed;
+}
+
+header{
+    background-color: darkorchid;
+    color: white;
+    padding: 15px 0px;
+}
+
+h1 a{
+    font-size: xx-large;
+    font-weight: bold;
+    margin-left: 50px;
+    color: white;
+    transition: .2s;
+    text-decoration: none;
+}
+
+h1 a:hover {
+    color: yellow;
+    font-size: 32.5px;
+}
+
+
+nav{
+    position: absolute;
+    top: 20px;
+    right: 50px;
+
+}
+
+.flag{
+    width: 20px;
+    height: 13px;
+    margin-right: 2px;
+}
+
+nav li{
+    display: inline;
+    margin: 0 0 0 20px;
+
+}
+
+nav a{
+    color:rgb(255, 255, 255);
+    transition: .2s;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: yellow;
+    font-size: large;
+}
+
+
+main ul{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: xx-large;
+    font-weight: bold;
+    color: #dc143c;
+    margin-bottom: 20px;
+    width: 230px;
+    text-align: center;
+}
+
+main li {
+    display: inline-block;
+    align-items: top;
+    padding: 0 40px;
+    box-sizing: border-box;
+    border: 5px solid #910e28;
+    border-radius: 5%;
+    padding: 20px 40px 50px 40px;
+}
+
+main a li {
+    transition: .2s;
+}
+
+main a li:hover {
+    border-color: white;
+    transform: scale(1.01);
+}
+
+.conversoes {
+    width: 220px;
+    height: 300px;
+}
