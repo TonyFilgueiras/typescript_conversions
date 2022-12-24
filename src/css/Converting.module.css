@@ -1,0 +1,44 @@
+.ul {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.li {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20%;
+    height: 400px;
+    margin: 0 1.5%;
+    padding: 10px;
+    border-top-width: 8px;
+    border: 5px solid var(--border);
+    border-radius: 5%;
+    transition: .2s;
+
+}
+
+.li input {
+    width: 70px;
+    text-align: end;
+}
+
+.li div {
+    color: var(--title);
+    font-size: 100px;
+}
+
+.select {
+    width: 150px;
+    margin: 0 auto;
+}
+
+.equal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 100px;
+    line-height: 35px;
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import style from "../css/ConversionContainer.module.css"
+import style from "../css/HomeView.module.css"
 import peso from "../img/peso.svg"
 import temp from "../img/temp.png"
 import vel from "../img/vel.png"
@@ -30,7 +30,7 @@ const list = [
 
 ]
 
-export default function ConversionContainer() {
+export default function HomeView() {
   return (
     <ul className={style.ul}>
         {list.map((item) => 

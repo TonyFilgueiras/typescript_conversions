@@ -24,6 +24,13 @@
 .header ul li {
     margin-left: 20px;
     padding: 5px;
+    transition: .2s;
+}
+
+.header ul li:hover {
+    color: var(--text);
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .flag{

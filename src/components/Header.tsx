@@ -2,18 +2,22 @@ import React from 'react'
 import style from "../css/Header.module.css"
 import usaLogo from "../img/eua.png"
 import brlLogo from "../img/brasil.png"
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 
-type Props = {
-  pathName: string
-}
 
-export default function Header({pathName}: Props) {
+
+export default function Header() {
+  const [pathname, setPathname] = React.useState("")
+  const location = useLocation()
+
+  React.useEffect(() => {
+    setPathname(location.pathname.replace("/", "").charAt(0).toUpperCase() +  location.pathname.replace("/", "").slice(1))
+  },[location]);
 
   return (
     <header className={style.header}>
         <NavLink to="/">
-          <h1>Tony's Conversions {pathName? <>-</> : <></>} {pathName}</h1>
+          <h1>Tony's Conversions {pathname? <>-</> : <></>} {pathname}</h1>
         </NavLink>
         <nav>
             <ul>
