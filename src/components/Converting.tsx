@@ -1,6 +1,7 @@
 import React from 'react'
 import style from "../css/Converting.module.css"
 import {  useParams } from 'react-router-dom'
+import useConversion from '../hooks/useConversion'
 
 
 // type Props = {
@@ -9,6 +10,7 @@ import {  useParams } from 'react-router-dom'
 
 
 export default function Converting() {
+  
   type Options = {
     label: string,
     id: number
@@ -21,8 +23,7 @@ export default function Converting() {
   const [option1, setOption1] = React.useState('1')  
   const [option2, setOption2] = React.useState('2')  
   const [value1, setValue1] = React.useState(0)
-  const [value2, setValue2] = React.useState(0)
-
+  let value2 = useConversion(typeOfConversion, option1, option2,  value1)
   
   if (typeOfConversion === "speed"){
     options = [
@@ -97,111 +98,6 @@ export default function Converting() {
       }
     } 
   }
-  
-  
-  React.useEffect(() => {
-    function calculateConversion(){
-      switch (typeOfConversion) {
-        case 'speed' :
-          if (option1 === '1' && option2 === '2') {
-            setValue2(Math.round(value1 / 2.237 * 100) / 100)
-          }
-          else if (option1 === '3' && option2 === '2') {
-            setValue2(Math.round(value1 / 3.6 * 100) / 100)
-          }
-          else if (option1 === '4' && option2 === '2') {
-            setValue2(Math.round(value1 / 1.944 * 100) / 100)
-          }
-          else if (option1 === '2' && option2 === '1') {
-            setValue2(Math.round(value1 * 2.237 * 100) / 100)
-          }
-          else if (option1 === '3' && option2 === '1') {
-            setValue2(Math.round(value1 / 1.609 * 100) / 100)
-          }
-          else if (option1 === '4' && option2 === '1') {
-            setValue2(Math.round(value1 * 1.151 * 100) /100)
-          }
-          else if (option1 === '2' && option2 === '3') {
-            setValue2(Math.round(value1 * 3.6 * 100) / 100)
-          }
-          else if (option1 === '1' && option2 === '3') {
-            setValue2(Math.round(value1 * 1.609 * 100) / 100)
-          }
-          else if (option1 === '4' && option2 === '3') {
-            setValue2(Math.round(value1 * 1.852 * 100) / 100)
-          }
-          else if (option1 === '1' && option2 === '4') {
-            setValue2(Math.round(value1 / 1.151 * 100) / 100)
-          }
-          else if (option1 === '2' && option2 === '4') {
-            setValue2(Math.round(value1 * 1.944 * 100) / 100)
-          }
-          else if (option1 === '3' && option2 === '4') {
-            setValue2(Math.round(value1 / 1.852 * 100) / 100)
-          }
-          break
-        case "temperature":
-          if (option1 === '1' && option2 === '2') {
-            setValue2(Math.round((value1 - 32) / 1.8 * 100) / 100)
-          }
-          else if (option1 === '1' && option2 === '3') {
-            setValue2(Math.round(((value1 - 32) / 1.8 + 273.15) * 100) / 100)
-          }
-          else if (option1 === '2' && option2 === '3') {
-            setValue2(value1 + 273.15)
-          }
-          else if (option1 === '3' && option2 === '2') {
-            setValue2(Math.round((value1 - 273.15) * 100) / 100)
-          }
-          else if (option1 === '2' && option2 === '1') {
-            setValue2(Math.round(((value1 * (9/5)) + 32) * 100) /100)
-          }
-          else if (option1 === '3' && option2 === '1') {
-            setValue2(Math.round((((value1 - 273.15) * (9/5)) + 32) * 100) /100)
-          }
-          break
-        case "weight":
-          if (option1 === '2' && option2 === '1') {
-            setValue2(Math.round(value1 / 16 * 100) / 100)
-          }
-          else if (option1 === '3' && option2 === '1') {
-            setValue2(Math.round(value1 * 2.205 * 100) / 100)
-          }
-          else if (option1 === '4' && option2 === '1') {
-            setValue2(Math.round(value1 / 453.6 * 100) / 100)
-          }
-          else if (option1 === '1' && option2 === '2') {
-            setValue2(Math.round(value1 * 16 * 100) / 100)
-          }
-          else if (option1 === '3' && option2 === '2') {
-            setValue2(Math.round(value1 * 35.274 * 100) / 100)
-          }
-          else if (option1 === '4' && option2 === '2') {
-            setValue2(Math.round(value1 / 28.35 * 100) / 100)
-          }
-          else if (option1 === '1' && option2 === '3') {
-            setValue2(Math.round(value1 / 2.205 * 100) / 100)
-          }
-          else if (option1 === '2' && option2 === '3') {
-            setValue2(Math.round(value1 / 35.274 * 100) / 100)
-          }
-          else if (option1 === '4' && option2 === '3') {
-            setValue2(Math.round(value1 / 1000 * 100) / 100)
-          }
-          else if (option1 === '1' && option2 === '4') {
-            setValue2(Math.round(value1 * 453.6 * 100) / 100)
-          }
-          else if (option1 === '2' && option2 === '4') {
-            setValue2(Math.round(value1 * 28.35 * 100) / 100)
-          }
-          else if (option1 === '3' && option2 === '4') {
-            setValue2(Math.round(value1 * 1000 * 100) / 100)
-          }
-          break 
-        }
-    }
-    calculateConversion()
-  }, [value1, value2,option1,option2, typeOfConversion])
 
   return (
     <div>
@@ -215,7 +111,7 @@ export default function Converting() {
         </li>
         <li className={style.equal}><p>~</p>=</li>
         <li className={style.li}>
-          <p><input type="number" onChange={(e)=> setValue2(Number(e.target.value))} value={value2}/></p>
+          <p></p>
           <div>{value2}</div>
           <select id='option2' value={option2} onChange={(e)=>handleOptionChange(e.target)} className={style.select}>
               {options.map((opt)=> <option value={opt.id} key={opt.id}>{opt.label}</option>)}             

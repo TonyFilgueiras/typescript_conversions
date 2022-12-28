@@ -9,6 +9,7 @@
     text-align: center;
     flex-direction: column;
     justify-content: space-between;
+
     width: 20%;
     height: 400px;
     margin: 0 1.5%;
@@ -25,9 +26,13 @@
     text-align: end;
 }
 
+.li p{
+    height: 0px;
+}
+
 .li div {
     color: var(--title);
-    font-size: 100px;
+    font-size: 5em;
 }
 
 .select {
@@ -38,7 +43,8 @@
 .equal {
     display: flex;
     flex-direction: column;
+    margin-top: -45px;
     justify-content: center;
-    font-size: 100px;
-    line-height: 35px;
+    font-size: 5em;
+    line-height: 30px;
 }
