@@ -35,6 +35,10 @@
     font-size: 5em;
 }
 
+.li div p {
+    font-size: 0.4em;
+}
+
 .select {
     width: 150px;
     margin: 0 auto;
