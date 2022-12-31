@@ -141,6 +141,12 @@ export default function Converting() {
         setValue1('-')
       }
     }
+    if (value1 ==="."){
+      setValue1("0.")
+    }
+    if (value1 ==="-."){
+      setValue1("-0.")
+    }
   },[value1])
 
   return (
