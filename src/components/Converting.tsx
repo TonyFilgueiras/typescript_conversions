@@ -22,7 +22,7 @@ export default function Converting() {
 
   const [option1, setOption1] = React.useState('1')  
   const [option2, setOption2] = React.useState('2') 
-  const [value1, setValue1] = React.useState(0)
+  const [value1, setValue1] = React.useState('0')
   let value2 = useConversion(typeOfConversion, option1, option2,  value1)
   
   if (typeOfConversion === "speed"){
@@ -117,11 +117,37 @@ export default function Converting() {
     } 
   }
 
+  React.useEffect(()=>{
+    let number = value1 
+    const regex= /^[^a-zA-Z.,](?!(?:.*[,.-]){2,})[0-9.,-]{0,}/ 
+    number = number.replace(',', '.')
+    setValue1(number.replace(/[^\d.-]/g, ''))
+    if (!regex.test(value1)){
+      if (/^[^a-zA-Z](?:(?:.*[,.]){1,})[0-9.,]{0,}/.test(value1) ){
+        setValue1(value1.slice(0,-1))
+      }
+    }
+    if (/^[-0-9.](?:.*[-]){1,}[0-9.,]{0,}/.test(value1)){
+      setValue1(value1.slice(0,-1))
+    }
+    if (value1 === ""){
+      setValue1('0')
+    }
+    if (/^[0][0-9-]/.test(value1)){
+      if (value1 !== "0-"){
+        setValue1(String(parseInt(value1)))
+      }
+      else {
+        setValue1('-')
+      }
+    }
+  },[value1])
+
   return (
     <div>
       <ul className={style.ul}>
         <li className={style.li}>
-          <p><input type="number" onChange={(e)=> setValue1(Number(e.target.value))} value={value1}/></p>
+          <p><input onChange={(e)=> setValue1(e.target.value)} value={value1}/></p>
           <div>
             {value1}
             <p>{symbol1}</p>
