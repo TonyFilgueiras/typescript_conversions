@@ -126,40 +126,40 @@ export let facts:GroupFactType = {
     ],
     weight: [
         {
-            en:"",
-            pt:""
+            en:"Switzerland eats the most chocolate equating to 10 kilos per person per year",
+            pt:"A Suíça come mais chocolate, o que equivale a 10 quilos por pessoa por ano"
         },
         {
-            en:"",
-            pt:""
+            en:"Americans eat 35,000 tons of pasta a year",
+            pt:"Americanos comem 35.000 toneladas de macarrão por ano"
         },
         {
-            en:"",
-            pt:""
+            en:"The bones of a pigeon weigh less than its feathers",
+            pt:"Os ossos de um pombo pesam menos que suas penas"
         },
         {
-            en:"",
-            pt:""
+            en:"The Earth weighs 6,588,000,000,000,000,000 tons",
+            pt:"A Terra pesa 6.588.000.000.000.000.000 de toneladas"
         },
         {
-            en:"",
-            pt:""
+            en:"Every year the sun loses 360 million tons",
+            pt:"Todos os anos o sol perde 360 milhões de toneladas"
         },
         {
-            en:"",
-            pt:""
+            en:"The average iceberg weighs 20,000,000 tons",
+            pt:"O iceberg médio pesa 20 milhões de toneladas"
         },
         {
-            en:"",
-            pt:""
+            en:"You have to eat 5kg of potatoes to put on 0.5kg of weight (a potato has no more calories than an apple)",
+            pt:"Você tem que comer 5kg de batatas para engordar 0,5kg de peso (uma batata não tem mais calorias que uma maçã)"
         },
         {
-            en:"",
-            pt:""
+            en:"The average woman will consume over 2.7kg of lipstick in their lifetime",
+            pt:"A mulher média consumirá mais de 2,7 kg de batom em sua vida"
         },
         {
-            en:"",
-            pt:""
+            en:"The Empire State Building in New York weighs over 365,000 tons",
+            pt:"O Empire State Building em Nova York pesa mais de 365.000 toneladas"
         },
     ]
     
