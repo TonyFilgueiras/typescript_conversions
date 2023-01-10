@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function useConversion(typeOfConversion,option1,option2,value1) {
-  const [value2, setValue2] = React.useState()
+export default function useConversion(typeOfConversion:string|undefined ,option1: string,option2: string,value1: any) :number {
+  const [value2, setValue2] = React.useState(0);
   React.useEffect(()=>{
     switch (typeOfConversion) {
       case 'speed' :
@@ -50,7 +50,7 @@ export default function useConversion(typeOfConversion,option1,option2,value1) {
           setValue2(Math.round(((value1 - 32) / 1.8 + 273.15) * 100) / 100)
         }
         else if (option1 === '2' && option2 === '3') {
-          setValue2(value1 + 273.15)
+          setValue2(Math.round((Number(value1) + 273.15 )*100)/100 )
         }
         else if (option1 === '3' && option2 === '2') {
           setValue2(Math.round((value1 - 273.15) * 100) / 100)
