@@ -52,6 +52,29 @@
     line-height: 30px;
 }
 
+.factContainer {
+    /* border: 4px lime solid; */
+    text-align: center;
+    color: var(--title);
+    font-size: large;
+    font-weight: bold;
+    margin: 10px 7vw;
+}
+
+.factContainer i {
+    position: relative;
+    top: 10px;
+    font-size: 2em;
+    color: var(--border);
+    transition: .2s;
+    /* border: 4px rgb(229, 255, 0) solid; */
+}
+
+.factContainer i:hover{
+    cursor: pointer;
+    font-size: 2.5em;
+}
+
 @media screen and (max-width: 970px) {
     .ul {
         display: flex;

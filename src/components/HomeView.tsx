@@ -18,7 +18,7 @@ type Options = {
 }
 const options : Options[] = [
   {
-    containerTitle: {en: "Weight Conversion", pt: "Conversão de Peso"},
+    containerTitle: {en: "Mass Conversion", pt: "Conversão de Massa"},
     imageSource: peso,
     imageAlt: "Weight image",
     containerRoute: "/weight",

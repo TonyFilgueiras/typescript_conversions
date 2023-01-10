@@ -3,6 +3,7 @@ import style from "../css/Converting.module.css"
 import {  useParams } from 'react-router-dom'
 import useConversion from '../hooks/useConversion'
 import { UserContext } from '../UserContext'
+import { funFactGenerator, facts, GroupFactType } from '../hooks/funFactsGenerator'
 
 
 export default function Converting() {
@@ -14,17 +15,15 @@ export default function Converting() {
     symbol: string,
     id: number
   }
-
-  const { typeOfConversion } = useParams()
+  const { typeOfConversion }= useParams()
   const {languageStorage} = React.useContext(UserContext)
-
   let options: Options[] = []
 
   const [option1, setOption1] = React.useState('1')  
   const [option2, setOption2] = React.useState('2') 
   const [value1, setValue1] = React.useState('0')
   let value2 = useConversion(typeOfConversion, option1, option2,  value1)
-  
+
   if (typeOfConversion === "speed"){
     options = [
       {
@@ -149,6 +148,24 @@ export default function Converting() {
     }
   },[value1])
 
+  
+  React.useEffect(()=> {
+    funFactGenerator(facts, typeOfConversion)
+  },[typeOfConversion])
+  
+  const [factIndex, setFactIndex] = React.useState(0)
+
+  function newFact(facts: GroupFactType){
+    if (typeOfConversion){
+      if (factIndex < facts[typeOfConversion].length -1) {        
+        setFactIndex(factIndex+1)
+      }
+      else {
+        setFactIndex(0)
+      }
+    }
+  }
+
   return (
     <div>
       <ul className={style.ul}>
@@ -182,6 +199,10 @@ export default function Converting() {
           </select>
         </li>
       </ul>
+      <div className={style.factContainer}>
+        {typeOfConversion? <section>{facts[typeOfConversion][factIndex][languageStorage]}</section>:<></>}
+        <i onClick={()=>newFact(facts)}>&#x21bb;</i>
+      </div>
     </div>
   )
 }

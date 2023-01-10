@@ -21,7 +21,7 @@ export default function Header() {
   const pathnameTitle : PathnameTitle={
     speed: {en: "Speed", pt: "Velocidade"},
     temperature: {en: "Temperature", pt: "Temperatura"},
-    weight: {en: "Weight", pt: "Peso"},
+    weight: {en: "Weight", pt: "Peso"}, 
   }
 
 
@@ -44,5 +44,3 @@ export default function Header() {
     
   )
 }
-
-// setPathname(location.pathname.replace("/", "").charAt(0).toUpperCase() +  location.pathname.replace("/", "").slice(1))
