@@ -1,10 +1,10 @@
 import React from 'react'
 
-type UserContextProps ={
+interface UserContextProps {
   children: React.ReactNode
 }
 
-type UserContextType = {
+interface UserContextType  {
   languageStorage : string
   setLanguageStorage : (newState: string)=> void
 }

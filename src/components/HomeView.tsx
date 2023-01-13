@@ -6,11 +6,11 @@ import vel from "../img/vel.png"
 import { NavLink } from 'react-router-dom'
 import { UserContext } from '../UserContext'
 
-type ContainerTitle = {
+interface ContainerTitle  {
   [key:string]: string  
 }
 
-type Options = {
+interface Options  {
   containerTitle: ContainerTitle,
   imageSource: any,
   imageAlt: string,

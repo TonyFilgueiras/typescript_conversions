@@ -14,7 +14,7 @@ export default function Header() {
   const {languageStorage, setLanguageStorage}= React.useContext(UserContext)
 
 
-  type PathnameTitle= {
+  interface PathnameTitle {
     [key: string]: {[key:string]: string}
   }
 

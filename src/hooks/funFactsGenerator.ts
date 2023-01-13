@@ -1,9 +1,9 @@
-export type FactType = {
+export interface FactType  {
     [key:string]: string
 }
     
 
-export type GroupFactType = {
+export interface GroupFactType  {
     [key:string]: FactType[]
     
 }

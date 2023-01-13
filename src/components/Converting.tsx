@@ -7,10 +7,10 @@ import { funFactGenerator, facts, GroupFactType } from '../hooks/funFactsGenerat
 
 
 export default function Converting() {
-  type Label = {
+  interface Label {
     [key:string]:string
   }
-  type Options = {
+  interface Options {
     label: Label,
     symbol: string,
     id: number
